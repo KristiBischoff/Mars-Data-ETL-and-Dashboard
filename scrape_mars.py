@@ -11,10 +11,10 @@ import pandas as pd
 #the latest News Title and Paragraph Text. Assign the text to variables that you can reference later.
 
 def init_browser():
-    browser = Browser("chrome", headless=False)
+    return Browser("chrome", headless=False)
 
 def scrape_info():
-
+    browser = init_browser()
     mars_info = {}
     browser = Browser("chrome", headless=False)
     url = "https://mars.nasa.gov/news/"
@@ -71,23 +71,45 @@ def scrape_info():
     #the table containing facts about the planet including Diameter, Mass, etc.
 
     #Use Pandas to convert the data to a HTML table string.
+    url = "https://space-facts.com/mars/"  
+    
+    browser.visit(url)
+    time.sleep(3)
 
-    url = "https://space-facts.com/mars/"
-    tables = pd.read_html(url)
-    tables
-
-    tables_df = tables[0]
-    tables_df
-
-    html_table = tables_df.to_html()
-    html_table
-
-    html_table.replace('\n', '')
+    html = browser.html
+    soup = BeautifulSoup(html, "html.parser")
+    tables_df_list  = soup.find("table", id="tablepress-mars")
 
 
-    tables_df.to_html('table.html')
+    for table in tables_df_list:
 
-    mars_info["MarsTable"] = tables_df.to_html('table.html')
+        html_table = table.to_html()
+        html_table
+
+        html_table.replace('\n', '')
+
+
+        table.to_html('table.html')
+
+    mars_info["MarsTable"] = table.to_html('table.html')
+ 
+
+    # tables = pd.read_html(url)
+    # tables
+
+    # tables_df = tables[0]
+    # tables_df
+
+    # html_table = tables_df.to_html()
+    # html_table
+
+    # html_table.replace('\n', '')
+
+
+    # tables_df.to_html('table.html')
+
+    # mars_info["MarsTable"] = tables_df.to_html('table.html')
+
 
     ### Mars Hemispheres
 

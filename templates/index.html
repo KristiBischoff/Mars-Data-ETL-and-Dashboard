@@ -20,23 +20,46 @@
 </head>
 
 <body>
+    <div class="container">
 
-<div class="col-sm-12">
-    <div class="row">
-        <div class="col-sm-6">
-                <img src="{{ mars_info.FeaturedImage }}" alt="Mars">
-                <h2>The typical weather on Mars is:</h2>
-                <h3>All weather: {{ mars_info.WeatherTweet }}</h3>
-                <h2>The typical news headline for Mars is:</h2>
-                <h3>News Title: {{ mars_info.NewsTitle }}</h3>
-                <h3>News Paragraph: {{ mars_info.NewsDescription }}</h3>
+        <div class="jumbotron text-center">
+            <h1>Mission to Mars News</h1>
+            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get the News</a></p>
         </div>
 
-    </div>
-</div>
+        <div class="row">
+            <div class="col-sm-8">
+                <h1>The Latest Mars News</h2>
+                    <h2>{{ mars_info.NewsTitle }}</h3>
+                        <h3>{{ mars_info.NewsDescription }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-8">
+                <img src="{{ mars_info.FeaturedImage }}" alt="Mars" style="float:left;width:100%;height:100%;">
+            </div>
+            <div class="col-sm-4">
+                <h2>The Latest Mars Weather Tweet:</h2>
+                <h3>{{ mars_info.WeatherTweet }}</h3>
+                <div>
+                    {{ mars_info.MarsTable }}
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">"
+                <div>
+                        {% for image in mars_info %}
+                        <h2>{{mars_info.ImageTitle}}</h2>
+                        <img src="{{ mars_info.ImageURL }}" alt="Mars" style="width:400px;height:400px;">
+                        {% endfor %}
+                </div>
+
+
+            </div>
+        </div>
 
 
 </body>
 
 </html>
-
