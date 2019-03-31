@@ -78,20 +78,20 @@ def scrape_info():
 
     html = browser.html
     soup = BeautifulSoup(html, "html.parser")
-    tables_df_list  = soup.find("table", id="tablepress-mars")
+    # tables_df_list  = soup.find("table", id="tablepress-mars")
+    tables = pd.read_html(html)
+
+    # for table in tables_df_list:
+
+    #     html_table = table.to_html()
+    #     html_table
+
+        # html_table.replace('\n', '')
 
 
-    for table in tables_df_list:
+        # table.to_html('table.html')
 
-        html_table = table.to_html()
-        html_table
-
-        html_table.replace('\n', '')
-
-
-        table.to_html('table.html')
-
-    mars_info["MarsTable"] = table.to_html('table.html')
+    mars_info["MarsTable"] = tables[0].to_html()
  
 
     # tables = pd.read_html(url)

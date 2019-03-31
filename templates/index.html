@@ -42,7 +42,7 @@
                 <h2>The Latest Mars Weather Tweet:</h2>
                 <h3>{{ mars_info.WeatherTweet }}</h3>
                 <div>
-                    {{ mars_info.MarsTable }}
+                    {{ mars_info.MarsTable|safe }}
                 </div>
             </div>
         </div>
