@@ -1,5 +1,4 @@
 # Mars in the News Web Scrape and Dashboard
-![mission_to_mars](Images/mission_to_mars.jpg)
 
 This repository builds a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. 
 
@@ -37,6 +36,12 @@ Conducted web scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Reques
 
 Used MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
 
+## Application Screenshot
+
+![MarsApp1](MarsApp1.png)
+
+## Planet Hemisphere Images Scraped
+![MarsApp2](MarsApp2.png)
 
 ## Copyright
 
