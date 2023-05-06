@@ -1,4 +1,4 @@
-# Mars in the News Web Scrape and Dashboard
+# Mars in the News ETL and Dashboard
 
 This repository uses ETL concepts to build a web application that scrapes various websites for data related to the Mission to Mars. The information is then displayed in a single HTML page. 
 
