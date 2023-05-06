@@ -43,6 +43,3 @@ Used MongoDB with Flask templating to create a new HTML page that displays all o
 ## Planet Hemisphere Images Scraped
 ![MarsApp2](MarsApp2.png)
 
-## Copyright
-
-© 2019 Trilogy Education Services. All Rights Reserved.
