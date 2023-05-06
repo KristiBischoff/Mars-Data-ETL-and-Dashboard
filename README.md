@@ -1,12 +1,12 @@
 # Mars in the News Web Scrape and Dashboard
 
-This repository builds a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. 
+This repository uses ETL concepts to build a web application that scrapes various websites for data related to the Mission to Mars. The information is then displayed in a single HTML page. 
 
-## Web Scraping
+## Extract data via web scraping and performed necessart data transformations
 
-Conducted web scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
+Conducted web scraping using BeautifulSoup, Python Pandas, and Requests/Splinter.
 
-## What needed to be web scraped:
+### What needed to be web scraped:
 
 ### NASA Mars News
 
@@ -16,7 +16,7 @@ Conducted web scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Reques
 
 * Visited the url for JPL Featured Space Image [here](https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars).
 
-* Used splinter to navigate the site and find the image url for the current Featured Mars Image and assign the url string to a variable called `featured_image_url`.
+* Navigated the site and found the image url for the current Featured Mars Image and assign the url string to a variable called `featured_image_url`.
 
 ### Mars Weather
 
@@ -32,9 +32,9 @@ Conducted web scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Reques
 
 * Visited the USGS Astrogeology site [here](https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars) to obtain high resolution images for each of Mar's hemispheres.
 
-## MongoDB and Flask Application
+## Loading the data in MongoDB and creation of a Flask Application
 
-Used MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
+The scraped and transformed data was loaded into MongoDB. Used Flask templating, HTML, and CSS code to create a new HTML page that displays all of the information that was scraped from the URLs above.
 
 ## Application Screenshot
 
