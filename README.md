@@ -2,7 +2,7 @@
 
 This repository uses ETL concepts to build a web application that scrapes various websites for data related to the Mission to Mars. The information is then displayed in a single HTML page. 
 
-## Extract data via web scraping and performed necessart data transformations
+## Extract data via web scraping and performed necessary data transformations
 
 Conducted web scraping using BeautifulSoup, Python Pandas, and Requests/Splinter.
 
